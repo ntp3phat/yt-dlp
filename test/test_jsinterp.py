@@ -69,22 +69,6 @@ class TestJSInterpreter(unittest.TestCase):
     def test_comments(self):
         'Skipping: Not yet fully implemented'
         return
-        self._test('''
-            function f() {
-                var x = /* 1 + */ 2;
-                var y = /* 30
-                * 40 */ 50;
-                return x + y;
-            }
-        ''', 52)
-
-        self._test('''
-            function f() {
-                var x = "/*";
-                var y = 1 /* comment */ + 2;
-                return y;
-            }
-        ''', 3)
 
     def test_precedence(self):
         self._test('''
